@@ -1,0 +1,145 @@
+:root {
+  --primary-color: #66ccff;
+  --primary-color-dark: #4db8ff;
+  
+  /* 字体大小 */
+  --font-size-base: 17px;
+  --font-size-sm: 0.9rem;
+  --font-size-lg: 1.15rem;
+  --font-size-xl: 1.35rem;
+  
+  /* 深色主题 (默认) */
+  --bg-primary: #0d0d14;
+  --bg-secondary: #16161f;
+  --text-primary: #f0f0f5;
+  --text-secondary: #c8c8d0;
+  --card-bg: rgba(22, 22, 31, 0.65);
+  --header-bg: rgba(13, 13, 20, 0.65);
+  --footer-bg: rgba(13, 13, 20, 0.5);
+  --border-color: rgba(102, 204, 255, 0.3);
+  --icon-bg: rgba(102, 204, 255, 0.2);
+  --hover-bg: rgba(102, 204, 255, 0.2);
+  --shadow-color: rgba(102, 204, 255, 0.25);
+}
+
+[data-theme="light"] {
+  --bg-primary: #f8fafc;
+  --bg-secondary: #e2e8f0;
+  --text-primary: #1e293b;
+  --text-secondary: #52525b;
+  --card-bg: rgba(255, 255, 255, 0.6);
+  --header-bg: rgba(248, 250, 252, 0.7);
+  --footer-bg: rgba(248, 250, 252, 0.4);
+  --border-color: rgba(102, 204, 255, 0.4);
+  --icon-bg: rgba(102, 204, 255, 0.25);
+  --hover-bg: rgba(102, 204, 255, 0.25);
+  --shadow-color: rgba(102, 204, 255, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family, 'Noto Sans SC', 'PingFang SC', 'Microsoft YaHei', sans-serif);
+  font-size: var(--font-size-base);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-primary);
+  min-height: 100vh;
+  transition: background-color 0.3s ease;
+}
+
+/* 背景图片层 */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  z-index: -2;
+  transition: opacity 1.5s ease-in-out, transform 1.5s ease-in-out;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  padding: 2rem 1rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 滚动条样式 */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color-dark);
+}
+
+/* 选择文本颜色 */
+::selection {
+  background: var(--primary-color);
+  color: white;
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category-section {
+  animation: fadeIn 0.5s ease-out;
+}
+
+/* 分类标题文字阴影 */
+.category-title {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="light"] .category-title {
+  text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5), 0 0 10px rgba(255, 255, 255, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  :root {
+    --font-size-base: 16px;
+  }
+  
+  .main-content {
+    padding: 1rem;
+  }
+}

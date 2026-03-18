@@ -73,9 +73,9 @@ const config: Config = {
     /** Gitee 仓库配置 */
     gitee: {
       /** Gitee 仓库地址，留空则不显示图标 */
-      url: "https://gitee.com/viagrahuang/myqf-home",
+      url: "https://github.com/myqfeng/BreezeNav",
       /** 图标类型：'gitee' 使用内置 Gitee 图标，或使用自定义图标 URL */
-      icon: "gitee",
+      icon: "github",
     },
     /** 搜索配置 */
     search: {
